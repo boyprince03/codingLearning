@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>租屋管理系統</title>
+    <link rel="stylesheet" href="/RentProject/css/stylesheet.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 url="/RentProject/index.HTML">租屋系統</h1>
+        </div>
+        <nav id="navtop">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="" class="nav-link">關於我們</a>
+                    <ul class="dropdown">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#">周遭環境</a></li>
+                <li class="nav-item"><a href="#">房型介紹</a></li>
+                <li class="nav-item"><a href="#">收費標準</a></li>
+                <li class="nav-item"><a href="#">相關條款</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('about-us')">關於我們</a></li>
+                <li><a href="#" onclick="showSection('login')">登入</a></li>
+                <li><a href="#" onclick="showSection('current-bill')">查詢當月電費</a></li>
+                <li><a href="#" onclick="showSection('upload-payment')">上傳繳費截圖</a></li>
+                <li><a href="#" onclick="showSection('payment-history')">查詢繳費歷史</a></li>
+                <li><a href="#" onclick="showSection('maintenance')">修繕回報</a></li>
+                <li><a href="#" onclick="showSection('contact-us')">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <section id="about-us" class="content-section">
+            <h2>關於我們</h2>
+            <p>介紹租屋周圍環境。</p>
+            <div class="room-gallery">
+                <h3>房間照片預覽</h3>
+                <img src="" alt="photo1">
+                <img src="" alt="photo2">
+        </section>
+
+        <section id="login" class="content-section" style="display:none;">
+            <h2>登入系統</h2>
+            <button id="google-login">使用 Google 登入</button>
+            <button id="fb-login">使用 Facebook 登入</button>
+            <button id="line-login">使用 LINE 登入</button>
+            <form id="email-login" action="/login" method="POST">
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="password" name="password" placeholder="密碼" required>
+                <button type="submit">登入</button>
+            </form>
+        </section>
+
+        <section id="current-bill" class="content-section" style="display:none;">
+            <h2>查詢當月電費</h2>
+            <p>顯示目前房間綁定的電費資料。</p>
+            <button>查詢</button>
+        </section>
+
+        <section id="upload-payment" class="content-section" style="display:none;">
+            <h2>上傳繳費截圖</h2>
+            <form action="/upload-payment" method="POST" enctype="multipart/form-data">
+                <input type="file" name="payment-screenshot" required>
+                <button type="submit">上傳</button>
+            </form>
+        </section>
+
+        <section id="payment-history" class="content-section" style="display:none;">
+            <h2>查詢繳費歷史</h2>
+            <button>查詢繳費歷史</button>
+        </section>
+
+        <section id="maintenance" class="content-section" style="display:none;">
+            <h2>修繕回報</h2>
+            <form action="/report-maintenance" method="POST">
+                <textarea name="issue" placeholder="請描述問題..." required></textarea>
+                <button type="submit">提交</button>
+            </form>
+        </section>
+
+        <section id="contact-us" class="content-section" style="display:none;">
+            <h2>聯絡我們</h2>
+            <p>若有任何問題，請使用以下方式聯絡我們。</p>
+            <button>聯絡我們</button>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+<script>
+    function showSection(sectionId) {
+            // 隱藏所有區塊
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // 顯示選定的區塊
+            var activeSection = document.getElementById(sectionId);
+            activeSection.style.display = 'block';
+    }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const navItems = document.querySelectorAll(".nav-item");
+
+    navItems.forEach(item => {
+        item.addEventListener("mouseenter", function () {
+            item.classList.add("active");
+        });
+
+        item.addEventListener("mouseleave", function () {
+            item.classList.remove("active");
+        });
+    });
+});
+    </script>
+</body>
+</html>

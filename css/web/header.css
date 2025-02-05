@@ -1,0 +1,136 @@
+/* 元素(標籤)選擇器 */
+/* 當html中有相同的標籤時，為了區別不同的作用，須利用id或是class(類別)來命名;
+若標籤會被javascript所呼叫使用，最好用id命名；
+若是不會被javascript所呼叫，或是可以共用的樣式，可以考慮使用class(類別)來命名 */
+/* 將style寫在標籤裡面，階層會大於css */
+
+/* 利用色塊來定位 */
+/* 背景色 */
+/* 後代(指定)選取器 最多指定三階 */
+/* 彈性布局:粽動將標籤排列為一整行，須寫在要排列的標籤的父框架(標籤)才會有作用 */
+header>section{
+    /* 高度>固定60-100px */
+    height: 60px;
+    /* 寬度 */
+    width: 100%;
+    /* 設定BOX的邊界 標籤置中 */
+    margin: 0 auto;
+    /* 顯示:彈性布局flex */
+    display: flex;
+    /* 水平對齊(橫行) */
+    justify-content: space-between;
+    /* 錨定位置 */
+    position: fixed;
+    top: 0;
+    /* 垂直對齊 (直列)*/
+    align-items: center;
+    background-color: rgba(188, 143, 143, 0.98);
+    /* 文字顏色 */
+    color:white;
+    /* 提升疊層 */
+    z-index: 1;
+}
+header>section>h1{
+    font-size: 28px;
+    /* background-color:rosybrown; */
+    margin-left: 10%;
+}
+
+#NavContent>h1>a{
+    color:white;
+    border-radius: 7px;
+    /* 底線樣式 */
+    text-decoration: none;
+    transition: transform 0.8s, box-shadow 0.5s; /* 动画过渡效果 */
+}
+
+header>section>nav{
+    /* background-color:brown; */
+    width: 40%;  
+    margin-right: 10%;
+}
+/* 指標籤法 */
+/* id選擇器:使用時機:需要被javascrip控制者，或同一框架之內有相同的標籤 */
+section>nav>ul{
+    display: flex;
+    justify-content: space-around;
+} 
+
+#Logo a:hover,#MenuContent li a:hover{
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 阴影加深 */
+    border-radius: 7px;
+    background: transparent;
+}
+
+
+/* 先找到要控制的東西再回推源頭 */
+/* #=id */
+/* 設計id的好處:可以精簡程式碼並更精準的控制樣式 */
+#MenuContent>li>a{
+    color:white;
+    /* 底線樣式(text-decoration)關閉(none) */
+    text-decoration: none;
+    /* 文字大小(樣式)基礎大小(預設):16px每次增加2-4 */
+    font-size:20px;
+    /* 动画过渡效果 */
+    transition: transform 0.8s, box-shadow 0.5s; /* 动画过渡效果 */
+    border-radius: 7px;
+}
+
+
+/* 廣告區 */
+header > #Carousel{
+    margin-top: 60px;
+    width: 100%;
+    height: 600px;
+    background-color:chocolate;
+    background-image: url(/images/background_1920.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 80%;
+}
+#Carousel .WelcomeForhead .TitleForhead {
+    font-size: 100px;
+    text-align: center;
+    color: rosybrown;
+    font-weight: 600;
+    /* 發光特效 */
+    text-shadow: 0 0 10px rgba(218, 109, 95, 0.60), 0 0 20px rgba(218, 109, 95, 0.3);
+}
+#Carousel .WelcomeForhead p{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.708);
+    font-size: larger;
+}
+.WelcomeForhead{
+    padding-top: 50px;
+}
+:root {
+    --breathe-dark: #333;
+    --breathe-light: #666;
+    --breathe-speed: 4s;
+}
+
+@keyframes breathe {
+    0%, 100% {
+    color: var(--breathe-dark);
+    opacity: 0.3;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+    color: var(--breathe-light);
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+}
+
+.WelcomeForhead p.breathing-text {
+    animation: breathe var(--breathe-speed) ease-in-out infinite;
+}
+header #changeText{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+    color: violet;
+}

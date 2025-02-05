@@ -1,0 +1,108 @@
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            column-gap: 20px;
+        }
+        nav {
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: width 0.6s ;
+            overflow: hidden;
+            position: relative;
+            
+        }
+        nav ul {
+            list-style: none;
+            padding-left: 15px;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            display: none;
+            gap: 15px;
+        }
+        nav.active {
+            width: 300px;
+        }
+        nav.active ul {
+            display: flex;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul a {
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            color: darkgrey;
+        }
+        .icon {
+            position: absolute;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.6s ease-in-out;
+            
+        }
+        .line{
+            width: 18px;
+            height: 2px;
+            padding-bottom:2px ;
+            background-color: black;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+        .line1 { transform: translateY(-3px); }
+        .line2 { transform: translateY( 3px); }
+
+        /* 當 nav 展開時，icon 從左滾動到右邊 */
+        nav.active .icon {
+            animation: roll-right 0.6s forwards;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 讓等號變成 X */
+        nav.active .line1 {
+            transform: rotate(45deg) translateY(3px);
+            
+        }
+        nav.active .line2 {
+            transform: rotate(-45deg) translateY(-3px);
+            
+        }
+
+        /* 滾動動畫 */
+        @keyframes roll-right {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(250px); }
+        }
+
+        /* 收起時的動畫 */
+        nav:not(.active) .icon {
+            animation: roll-left 0.6s forwards;
+        }
+
+        @keyframes roll-left {
+            0% { transform: translateX(250px); }
+            100% { transform: translateX(0); }
+        }
+
+

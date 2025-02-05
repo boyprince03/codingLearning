@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雙層收折導航列</title>
+    <link rel="stylesheet" href="/RentProject/test/css/test.css">
+</head>
+<body>
+    <nav id="navtop">
+        <ul>
+            <li class="nav-item">
+                <a href="#" class="nav-link">關於我們</a>
+                <ul class="dropdown">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+            </li>
+            <li><a href="#">周遭環境</a></li>
+            <li><a href="#">房型介紹</a></li>
+            <li><a href="#">收費標準</a></li>
+            <li><a href="#">相關條款</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navItems = document.querySelectorAll(".nav-item");
+
+            navItems.forEach(item => {
+                const link = item.querySelector(".nav-link");
+
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+
+                    // 關閉其他展開的選單
+                    navItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove("active");
+                        }
+                    });
+
+                    // 切換目前選單
+                    item.classList.toggle("active");
+                });
+            });
+
+            // 點擊外部時關閉選單
+            document.addEventListener("click", function(e) {
+                if (!e.target.closest(".nav-item")) {
+                    navItems.forEach(item => item.classList.remove("active"));
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

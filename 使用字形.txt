@@ -1,0 +1,29 @@
+英文:
+styles.css
+
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+
+joint.css
+
+body{
+    font-family: '','Smooch Sans', serif ;
+    /* 字體粗細 */
+    font-weight: 550;
+    /* 字型樣式 */
+    font-style: normal;
+  }
+
+中文:
+styles.css
+
+@import url('http://fonts.googleapis.com/earlyaccess/cwtexyen.css');
+
+joint.css
+
+body{
+    font-family: 'cwTeXYen','', serif ;
+    /* 字體粗細 */
+    font-weight: 550;
+    /* 字型樣式 */
+    font-style: normal;
+  }

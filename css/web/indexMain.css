@@ -1,0 +1,263 @@
+/* 讀取類別class(.) */
+#IndexMain>.BackColor{
+    background-color: rosybrown;
+    /* font color */
+    color: white;
+    
+}
+/* 有共用項目可以以逗點加入集中寫 */
+#Abouts >.Title,#Skills>.Title, #Works>.Title,#Contacts>.Title {
+    /* background-color: cornflowerblue; */
+    /* 留白 */
+    padding: 80px 0 40px 0;
+    /* 文字置中 */
+    text-align: center;
+    /* 文字大寫 >1rem(em) = 16px 為文字單位em, rem 都是彈性單位；若內、外層框架同時使用em為單位，內層會疊加外層尺寸；
+    rem端為不論在內外層，都不會疊加值*/
+    font-size: 2rem;
+    /* 文字粗細 */
+    font-weight: 600;
+}
+/* #Skills>.Title>h2, #Works>.Title>h2{
+    color: rosybrown;
+} */
+/* 子孫選擇器 利用{空格} 設定*/
+#IndexMain .Title> .RC{
+    color: rosybrown;
+}
+#IndexMain .Title .RC1{
+    color: white;
+}
+
+#IndexMain .LineAll{
+    /* 寬 */
+    width: 50px;
+    /* 高 */
+    height: 10px;
+    /* 邊框線條樣式: 下邊框線 樣式 粗細 顏色 */
+    /* border-bottom: solid 4px white; */
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+
+    /* 區塊置中設定，邊界 上下為0左右自動 */
+    margin: 0 auto;
+}
+#IndexMain .LineRed{
+    border-bottom-color:rosybrown ;
+
+}
+#IndexMain .LineWhite{
+    border-bottom-color:white ;
+
+}
+
+/* 提出樣式，可提升網頁讀取效能 */
+
+
+.AboutText>li{
+    font-size: 1rem;
+    font-weight: 150;
+    text-align: center;
+    margin: 2px;
+}
+#Skills{
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+/* 技能卡片 */
+#Skills >#Cards{
+    /* 寬度 */
+    /* width: 60%; */
+    width: 850px;
+    /* 背景色-調整區塊 */
+    /* background-color: aqua; */
+    margin: 0 auto;
+    display: flex;
+    /* 水平均分 */
+    justify-content: space-around;
+}
+#Skills> #Cards> .Cards{
+    /* 1.固定寬度 可利用函式計算(不同單位不能做計算): calc( (外層總寬度/內層的卡片數量-間距值 )*1倍單位值) 
+       2.假設每張卡片的寬度為250px 每張卡片的左右間距為 10px 所以每張卡片為260px *3 =780px */
+    /* width: calc((100 / 3 - 3 )*1%); */
+    width: 250px;
+    /* 邊界:上下為0，左右為10 */
+    margin: 0 10px;
+    background-color: white;
+    /* 盒子陰影 x軸 y軸 模糊 顏色 */
+    box-shadow:2px 2px 8px rgba(0, 0, 0, 0.5) ;
+    
+}
+#Skills .Cards> .CardPadding{
+    /* padding 會使卡片寬度向外增加 */
+    padding: 5px 15px;
+}
+/* 作品集 */
+#Works{
+    /* 背景圖 */
+    background-image: url(/images/work_space_background1920.jpg);
+    /* 大小 */
+    background-size: cover;
+    /* 不隨卷軸移動 */
+    background-attachment: fixed;
+    /* 不重複 */
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
+    
+    
+
+}
+
+.WorksItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列布局 */
+    gap: 10px; /* 格子间距 */
+    max-width: 825px; /* ol最大宽度 */
+    margin: 0 auto; /* 居中 */
+    box-sizing: border-box;
+    
+    
+}  
+#Works li{
+    /* 高 */
+    height: 145px;
+    /* 寬 */
+    width: 265px;
+    border:0.5px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    z-index: 0;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+#Works .WorksItems :hover a {
+    transform: translateY(0px);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.2);
+}
+.WorksItems .One{
+    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012248.png);
+    background-size: contain;
+}
+.WorksItems .Two{
+    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012048.png);
+    background-size: contain;
+}
+.WorksItems .Three{
+    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012802.png);
+    background-size: contain;
+}
+
+#Works a{
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    text-decoration: none;
+    color:black;
+    font-size: 30px;
+    transform: translateY(150px);
+    transition: transform 0.3s ease-in-out
+}
+
+
+
+/* 表單 */
+#Contacts{
+/* 底部留白 */
+padding-bottom: 30px;
+}
+
+#Contacts> #contact{
+    /* 寬 */
+    width: 400px;
+    /* 背景 */
+    /* background-color:blue; */
+    /* 邊界 上右下左 */
+    margin: 0 auto;
+    /* 留白 */
+    padding: 10px;
+    /* 框線: 線條樣式，線條粗細，線條顏色*/
+    border: double 10px white;
+    /* 外框大小限制不變 */
+    box-sizing: border-box;
+}
+#Contacts >#contact >div{
+    margin-bottom: 15px;
+}
+
+#contact >div>p{
+    /* 留白 */
+    padding: 5px 0;
+    /* 字體大小 */
+    font-size: 18px;
+}
+/* 屬性選擇器 input[type="text"] */
+#contact >div> input[type="text"],#contact >div> input[type="tel"],#contact >div> input[type="email"]{
+    /* 寬度 */
+    width: 350px;
+    /* 留白取代高度 */
+    padding: 10px;
+    /* 總寬度不變，值內縮*/
+    box-sizing: border-box;
+    /* 字形大小 */
+    font-size: 12px;
+}
+
+#contact>div>label{
+    /* 文字大小 */
+    font-size: 18px;
+}
+
+/* 子孫選擇器 */
+#Contacts input[type="radio"]{
+    width: 15px;
+    height: 15px;
+}
+/* 多行文字方塊 html(標籤屬性:cols="n"設定多行文字方塊寬度，N為字元數)*/
+/* rows="n" 設定多行文字方塊的高度，N為列數
+若設定最大最小寬高，上述屬性將無作用*/
+#contact > div > #Illustrate{
+    /* 最大寬度 */
+    max-width: 360px;
+    /* 最小寬度 */
+    min-width: 360px;
+    /* 最大高度 */
+    max-height: 150px;
+    /* 最小高度 */
+    min-height: 150px;
+    /* 留白 */
+    padding: 10px;
+    /* 總寬不動 內縮 */
+    box-sizing: border-box;
+}
+#contact>p{
+    width: 200px;
+    /* background-color: aqua; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+#contact>p>input[type="submit"],#contact>p>input[type="reset"]{
+    width: 90px;
+    height: 30px;
+    font-size: 16px;
+}
+#Contacts .button input{
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: transform 0.8s, box-shadow 0.5s; /* 动画过渡效果 */
+}
+#Contacts .button input:hover{
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+    
+}
+

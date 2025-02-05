@@ -1,0 +1,194 @@
+:root {
+    --hover-bg: rgba(0, 0, 0, 0.08);
+    --hover-scale: 1.05;
+    --transition-speed: 0.3s;
+}
+
+.test04{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transition var(--transition-speed) ease;
+}
+.button p{
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+/* 選擇器的空格也是一個選項，若#trash :hover{}，會連子容器也套用hover效果 */
+#trash:hover{
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 阴影加深 */
+    background:var(--hover-bg);
+    border-radius: 7px;
+    transition: var(--transition-speed);
+}
+
+#BodyBackground{
+    width: 1080px;
+    height: 720px;
+    margin: 0 auto;
+    background-image: url('http://www.daduomei.com/cjpic/frombd/2/253/3604064158/1238835204.jpg');
+    padding: 20%;
+    box-sizing: border-box;
+}
+#NavBar{
+    /* background-color: brown; */
+    width: 300px;
+    margin: 20px auto;
+    padding: 5px;
+    box-sizing: border-box;
+
+    
+}
+#NavBar div{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    /* background-color:aquamarine; */
+    transition: transform 0.5s, box-shadow 0.2s; /* 动画过渡效果 */
+
+}
+#NavBar div a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    
+    
+}
+#NavBar :hover{
+    transform: scale(1.1); /* 向上浮动 */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 阴影加深 */
+}
+
+#NavBar{
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.644);
+    border: 0px solid rgba(255, 255, 255, 0.237);
+    
+}
+.test01{
+    margin: 20px;
+}
+.test02{
+    /* 不換行 */
+    white-space: nowrap;
+    /* 隱藏溢出內容 */
+    overflow: hidden;
+    /* 寬度佔滿 */
+    width: 100%;
+    box-sizing: border-box;
+}
+.test02 span{
+    display: inline-block;
+    /* 文字初始位置完全在畫面右邊之外 */
+    padding-left: 100%;
+    /* 動畫 */
+    animation: scroll-text 30s linear infinite;
+}
+/* 動畫定義 scroll-text為函式名稱 */
+@keyframes scroll-text{
+    0%{
+        /* 右側開始 */
+        transform: translateX(100%);
+    }
+    100%{
+        /* 滾動到左邊 */
+        transform: translateX(-100%);
+    }
+}
+#scrollingUpTest{
+    display: flex;
+    justify-content: center;
+}
+.test03{
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 20px;
+    position: relative;
+    /* border: 1px solid #ccc; */
+    display: flex;
+    justify-content: center;
+}
+.test03 span{
+    width: 100%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    animation: scroll-up 6s infinite;
+    
+}
+.test03 span:nth-child(1){
+    animation-delay:0s ;
+}
+.test03 span:nth-child(2){
+    animation-delay:2s ;
+}
+.test03 span:nth-child(3){
+    animation-delay:4s ;
+}
+
+@keyframes scroll-up{
+    0%{
+        /* 下開始 */
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    10%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 1;
+    }
+    40%{
+        /* 到上方隱藏 */
+        opacity: 0;
+        /* 滾動到上 */
+        transform: translateY(-100%);
+    }
+    100%{
+        /* 滾動到上 */
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+#BodyBackground01{
+    background-color: aqua;
+    margin: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+#NavBar01{
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: aquamarine;
+}
+#NavBar01 div{
+    box-shadow: 2px ;
+    margin: 5px;
+}
+#NavBar01 div a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.emboss {
+    font-size: 44px;
+    color: #808080;
+    text-shadow: 
+    -1px -1px 1px rgba(255, 255, 255, 0.5),
+    1px 1px 1px rgba(0, 0, 0, 0.5);
+}

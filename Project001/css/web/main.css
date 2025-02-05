@@ -1,0 +1,30 @@
+main{
+    margin-top: 50px;
+    text-align: center;
+}
+
+#items, #result{
+    
+    height: 400px;
+    box-sizing: border-box;
+}
+#abouts{
+    height: 300px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#Items{
+    background-color: bisque;
+}
+#Result{
+    margin-bottom: 60px; 
+}
+main .title{
+    border: 5px solid black;
+    font-size: 44px;
+    font-weight: 600;
+
+}

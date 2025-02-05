@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEVE's Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!--只能一個link，不然會覆蓋，只會執行最後一行-->
+
+</head>
+<body>
+    <header>
+        <section id="NavContent">
+            <!--有兩個同階物件-->
+            <h1 id="Logo">
+                <a href="index.htm">STEVE'S Portfolio</a>
+                
+            </h1>
+            <nav>
+                <ul id="MenuContent">
+                    <li id="NavAbout"><a href="#Abouts">關於Steve</a></li>
+                    <!-- 錨點連結法:一頁式內部連結:目的地的id -->
+                    <li><a href="#Skills">相關技能</a></li>
+                    <li><a href="#Works">作品集</a></li>
+                    <li><a href="#Contacts">聯絡表單</a></li>
+                    <!-- 假連結= javascript:; -->
+                </ul>
+            </nav>
+        </section>
+            <ul id="Carousel">
+            <div class="WelcomeForhead">
+                <p class="TitleForhead">STEVE'S PORTFOLIO</P>
+                    <P class="breathing-text">Welcome To My Portfolio !</P>
+                    <p id="currentTime"></p>
+            </div>
+            <div id="changeText"></div>
+            <li id="One" class="CarouselImg">
+                <img src="" alt="">
+                <p>廣告文字</p>
+            </li>
+            <li id="Two" class="CarouselImg">
+                <img src="" alt="">
+                <p>廣告文字</p>
+            </li>
+            <li id="Three" class="CarouselImg">
+                <img src="" alt="">
+                <p>廣告文字</p>
+            </li>
+            </ul>
+    </header>
+
+    <main id="IndexMain">
+        <section id="Abouts" class="BackColor">
+            <div class="Title">
+                <h2>ABOUT</h2>
+                <p class="LineWhite LineAll"></p> 
+                <p></p>   
+            </div> 
+            <ul class="AboutText">
+                <li>Welcome to Steve's Portfolio!</li>
+                <li>Hi, I'm Steve, and I'm thrilled to have you visit my website. This platform serves as a showcase of my creative work and personal projects, offering a glimpse into my passion, dedication, and skills.</li>
+                <li>I pride myself on being an optimistic and proactive individual who constantly seeks opportunities for growth and improvement. My approach to life and work is rooted in positivity and determination, which I believe are the keys to achieving meaningful success.</li>
+                <li>Thank you for stopping by, and feel free to reach out if you'd like to connect or collaborate.</li>
+                <li>Enjoy your stay!</li>
+                <br><br>
+            
+            </ul>
+        </section>
+
+        <section id="Skills">
+            <div class="Title">
+                <h2 class="RC">SKILL</h2>
+                <p class="LineRed LineAll"></p>
+            </div>
+            <div id="Cards">
+                    <article class="Cards">
+                        <p class="CardPadding">
+                            <img src="" alt="">
+                        </p>
+                        <h3 class="CardPadding">Java Web Design</h3>
+                        <ul class="CardPadding">
+                            <li>後端網頁設計/維護</li>
+                            <li>Java SE、MySQL</li>
+                            <li>資料庫維護</li>
+                        </ul>
+                    </article>
+
+                    <article class="Cards">
+                        <p class="CardPadding">
+                            <img src="" alt="">
+                        </p>
+                        <h3 class="CardPadding">Webside Design</h3>
+                        <ul class="CardPadding">
+                            <li>前端網頁設計/維護</li>
+                            <li>HTML、CSS、Javascript</li>
+                            <li>Standardized Web Design</li>
+                        </ul>
+                    </article> 
+
+                    <article class="Cards">
+                        <p class="CardPadding">
+                            <img src="" alt="">
+                        </p>
+                        <h3 class="CardPadding">Data Analysis</h3>
+                        <ul class="CardPadding">
+                            <li>資料庫維護/數據分析整理</li>
+                            <li>MySQL</li>
+                            <li>Database maintenance/data analysis and collation</li>
+                        </ul>
+                    </article>                   
+            </div>
+        </section>
+        
+        <section id="Works">
+        
+            <div class="Title">
+                <h2 class="RC1">WORKS</h2>
+                <p class="LineWhite LineAll"></p>
+            </div>
+    
+            <ol class="WorksItems">
+                <li class="One">
+                    <a href="javascript:;"><span>JSP project</span></a>
+                </li>
+                <li class="Two">
+                    <a href="javascript:;"><span>WebDesign</span></a>
+                </li>
+                <li class="Three">
+                    <a href="javascript:;"><span>Java Project</span></a>
+                </li>
+                <li class="Four">
+                    <a href="javascript:;"><span>作品名稱</span></a>
+                </li>
+                <li class="Five">
+                    <a href="javascript:;"><span>作品名稱</span></a>
+                </li>
+                <li class="Six">
+                    <a href="javascript:;"><span>作品名稱</span></a>
+                </li>
+                <li class="Seven MrBo">
+                    <a href="javascript:;"><span>作品名稱</span></a>
+                </li>
+                <li class="Eight MrBo">
+                    <a href="javascript:;"><span>作品名稱</span></a>
+                </li>
+                <li class="Nine MrBo">
+                    <a href="javascript:;"><span>作品名稱</span></a>
+                </li>
+            </ol>
+        </section>
+
+        <section id="Contacts" class="BackColor">
+            <div class="Title">
+                <h2>CONTACT ME</h2>
+                <p class="LineWhite LineAll"></p>
+            </div>
+            <form action="" method="get" id="contact">
+                <div>
+                    <p> <label for="UserName">＊姓名：</label></p>
+                    <!-- label中for指向要跳轉的id -->
+                    <input type="text" name="" id="UserName" required placeholder="請輸姓名">
+                    <!-- required=必填屬性、placeholder=提示文字、var=預填可視文字 -->
+                </div>
+                <div>
+                    <!-- 不重要就用這個div -->
+                    <p><label for="TelNumber">＊聯絡電話：</label></p>
+                    <input type="tel" name="" id="TelNumber" required placeholder="Ex:09xx-123456">
+                </div>
+                <!-- 覺得很重要就用這個ul=無序清單 -->
+                <div>
+                    <p><label for="Email">＊聯絡信箱：</label></p>
+                    <input type="email" name="" id="Email" required placeholder="請輸入可聯絡的電子信箱">        
+                </div>
+                
+                <div>
+                    <p>＊詢問主旨</p>
+                    <label for="GraphicDesign">
+                        <input type="radio" name="Question" id="GraphicDesign">平面設計
+                    </label>
+                    <label for="WebDesign">
+                        <input type="radio" name="Question" id="WebDesign">網頁設計
+                    </label>
+                    <label for="StudioDesign">
+                        <input type="radio" name="Question" id="StudioDesign">影音設計
+                    </label>
+                    
+                </div>
+
+                <div>
+                    <p><label for="Illustrate">＊詳細說明：</label></p>
+                    <textarea name="" id="Illustrate" cols="30" rows="10"></textarea>
+                    <!-- textarea=多行文字方塊，cols=列 rows=行 -->
+                </div>
+
+                <p class="button">
+                    <input type="submit" value="確認送出">
+                    <input type="reset" value="重新設定">
+                </p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <section id="FootText">
+            <nav id="SubNav"></nav>
+            <!-- p:段落，h5:標題:先標題再段落，段落裡不能有標題，但是標題可以包段落 -->
+            <h5>
+                <p>&copy; 2024-<span id="Year"></span> Steve(王子建) All Rights Reserved</p>
+                <p>請尊重智慧財產權 著作權為 STEVE 所有，轉載必究</p>
+            </h5>
+        </section>
+    </footer>
+    <!-- 若使用module寫法，需加入type="module" 才能調用模塊 -->
+    <script type="module" src="/javascript/javascript.js"></script>
+</body>
+
+</html>

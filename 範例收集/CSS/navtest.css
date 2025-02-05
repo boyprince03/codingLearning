@@ -1,0 +1,39 @@
+/* 外框样式 */
+body{
+    background-color: beige;
+}
+nav {
+    
+    max-width: 300px; /* 最大宽度 */
+    margin:20px auto; /* 居中 */
+    
+}
+
+nav div {
+    
+    padding: 5%; /* 内边距 */
+    border-radius: 2px; /* 圆角 */
+    background-color:rgba(250, 235, 215, 0.384); /* 白色背景 */
+    transition: transform 0.15s, box-shadow 0.2s; /* 动画过渡效果 */
+}
+
+nav div:last-child {
+    margin-bottom: 0; /* 去除最后一个元素的下方间距 */
+}
+
+/* 悬停效果 */
+nav div:hover {
+    transform: scale(1.1); /* 向上浮动 */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 阴影加深 */
+}
+
+nav a {
+    text-decoration: none; /* 去掉下划线 */
+    color: #d3906cb9; /* 蓝色字体 */
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #c35c2c; /* 悬停时字体颜色 */
+}
+

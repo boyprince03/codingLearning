@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>縮圖更改背景</title>
+    <link rel="stylesheet" href="/範例收集/CSS/imageSwitch01.css">
+    
+</head>
+<body>
+    <header>
+        <div class="moonglass-bg">
+            <h2 class="nav-title"><a href="/範例收集/imageSwitch01.html">Moon Glass Navigation</a></h2>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#">Home</a></li>
+                    <li class="nav-item"><a href="#">About</a></li>
+                    <li class="nav-item"><a href="#">Services</a></li>
+                    <li class="nav-item"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div>
+                <H1>About</H1>
+            </div>
+        </section>
+        <section>
+            
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    <footer>
+        <div class="container">        
+            <div class="image-container" onclick="loadImage(event)" id="moon"></div>
+            <div class="image-container" onclick="loadImage(event)" id="tree"></div>
+            <div class="image-container" onclick="loadImage(event)" id="sea"></div>
+        </div>
+    </footer>
+    
+
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const images = {
+        moon: "/範例收集/images/moon.jpg",
+        tree: "/範例收集/images/trees.jpg",
+        sea: "/範例收集/images/sea.jpg"
+    };
+
+    document.querySelectorAll(".image-container").forEach(container => {
+        container.addEventListener("click", () => {
+            container.classList.remove("active"); // 先移除 active 類別
+        void container.offsetWidth; // 強制重繪，讓動畫可以重新播放
+        container.classList.add("active"); // 再次添加 active 類別
+
+        // 更改 body 背景
+        const id = container.id; 
+        document.body.style.background = `url(${images[id]}) no-repeat center/cover`;
+        });
+    });
+});
+</script>
+</body>
+</html>

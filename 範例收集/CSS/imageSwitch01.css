@@ -1,0 +1,138 @@
+/* 新增毛玻璃效果和交互样式 */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  background: url(/範例收集/images/trees.jpg) no-repeat center/cover;
+  transition: 0.8s ease-in-out;
+}
+header{
+    width: 100%;
+    /* background-color: aqua; */
+    position: fixed;
+    top: 0;
+}
+
+.moonglass-bg {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* backface-visibility: hidden; */
+}
+
+.nav-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: inset -2px 2px 4px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+    padding-right: 35px;
+    box-sizing: border-box;
+}
+
+.nav-title {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset -2px 2px 4px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(30px);
+    box-sizing: border-box;
+}
+.nav-title a{
+    text-decoration: none;
+    color: #2c3e50; 
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(37, 102, 233, 0.3);
+}
+
+.nav-item a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* backdrop-filter: blur(10px); */
+  border-radius: 15px;
+  transition: background-image 0.5s;
+  position: relative;
+}
+
+.image-container {
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* position: relative; */
+  overflow: hidden;
+  background-size: contain;
+}
+
+/* 背景图片设置 */
+#moon {
+  background: url(/範例收集/images/moon.jpg) center/cover;
+}
+
+#tree {
+  background: url(/範例收集/images/trees.jpg) center/cover;
+}
+
+#sea {
+  background: url(/範例收集/images/sea.jpg) center/cover;
+}
+
+/* 點擊效果.active */
+.image-container.active {
+    /* 動畫效果: 函式 時間 過度效果 */
+    animation: move 0.45s ease-in-out;
+}
+
+.image-container:hover {
+    /* transform: scale(1.02); */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 設定動畫樣式，以move打包成一個函式 */
+@keyframes move{
+    0% {
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+main{
+    height: 1200px;
+
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+}

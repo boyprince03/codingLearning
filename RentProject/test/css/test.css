@@ -1,0 +1,73 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* 主導航列 */
+        #navtop {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        #navtop ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        #navtop ul li {
+            position: relative;
+        }
+
+        #navtop ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        #navtop ul li a:hover {
+            background-color: #555;
+        }
+
+        /* 子選單 (隱藏狀態) */
+        .dropdown {
+            position: absolute;
+            transform: translateY(10px);
+            text-align: center;
+            top: 100%;
+            left: 0;
+            background:white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            width: 150px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        .dropdown li {
+            width: 100%;
+        }
+
+        .dropdown li a {
+            color: black;
+            padding: 10px;
+            display: block;
+
+        }
+
+        .dropdown li a:hover {
+            background-color: #ddd;
+        }
+
+        /* 點擊展開子選單 */
+        .nav-item.active .dropdown {
+            max-height: 200px; /* 控制展開的最大高度 */
+            width: 100vh;
+        }

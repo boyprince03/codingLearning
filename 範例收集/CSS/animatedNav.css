@@ -1,0 +1,11 @@
+nav{
+    filter: drop-shadow(0.25rem 0.25rem 0.5rem #0005);
+    width: 100%;
+    max-width: 14rem;
+}
+@media (prefers-reduced-motion){
+    nav * {
+        transition-duration: 0s !important;
+        animation-duration: 0s !important;
+    }
+}

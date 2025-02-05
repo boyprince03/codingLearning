@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Navbar</title>
+    <link rel="stylesheet" href="/範例收集/CSS/nav03.css">
+</head>
+<body>
+
+
+    <nav id="nav">
+        <button class="icon" id="toggle">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+        </button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <script>
+        const nav = document.getElementById('nav');
+        const toggle = document.getElementById('toggle');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+footer{
+    background-color:white;
+    /* 留白設計-內間距padding(兩個直:上, 下; 四個值:順時針:上右下左) */
+    padding: 35px 0 20px 0;
+    /* 背景圖 */
+    background-image: url(/images/background_1920.jpg);
+    /* 圖片不重複 */
+    background-repeat: no-repeat;
+    /* 填滿但不改變長寬比例，contain:長寬比例不變，顯示完整圖片 */
+    background-size:cover;
+    /* 背景圖定位點 (0.0)為圖片最左上角*/
+    background-position: center 90%;
+}
+#FootText>h5{
+    /* 文字對齊 */
+    /* background-color:white; */
+    text-align: center;
+    /* 文字顏色 (中英文分岐)*/
+    color: rosybrown;
+    
+}
+#FootText>h5>p{
+    /* 邊界(外間距) */
+    margin-bottom: 5px;
+    /* 全部英文字母大寫 */
+    text-transform: uppercase;
+}
+

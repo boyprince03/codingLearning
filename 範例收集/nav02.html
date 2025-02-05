@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Glass Navigation</title>
+    <link rel="stylesheet" href="/範例收集/CSS/nav02.css">
+    
+</head>
+<body>
+    <div class="moonglass-bg">
+        <div class="nav-container">
+            <h2 class="nav-title">Moon Glass Navigation</h2>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="#">Services</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navContainer = document.querySelector('.nav-container');
+            
+            // 添加链接
+            const items = [
+                { text: 'Home', href: '#' },
+                { text: 'About', href: '/about' },
+                { text: 'Services', href: '/services' },
+                { text: 'Contact', href: '/contact' }
+            ];
+
+            for (let i = 0; i < items.length; i++) {
+                const ListItem = document.createElement('div');
+                ListItem.className = 'nav-item';
+                
+                const navLink = document.createElement('a');
+                navLink.href = items[i].href;
+                navLink.textContent = items[i].text;
+                
+                ListItem.appendChild(navLink);
+                
+                const shadow = document.createElement('span');
+                shadow.className = 'text-shadow';
+                shadow.textContent = '0 2px 5px rgba(0,0,0,0.3)';
+                ListItem.appendChild(shadow);
+                
+                navContainer.appendChild(ListItem);
+            }
+        });
+    </script>
+</body>
+</html>
