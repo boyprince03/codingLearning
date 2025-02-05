@@ -80,3 +80,39 @@
 6. **分支 (Branch)**：使用 git branch 建立分支，git checkout 切換分支，git merge 合併分支 [14]。
 
 希望這些資訊對您有所幫助。如果您有其他問題，請隨時提出。
+
+
+
+
+
+https://github.com/boyprince03/codingLearning.git
+
+
+
+git@github.com:boyprince03/codingLearning.git
+
+
+
+### …or create a new repository on the command line
+
+
+
+```
+echo "# codingLearning" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/boyprince03/codingLearning.git
+git push -u origin main
+```
+
+### …or push an existing repository from the command line
+
+
+
+```
+git remote add origin https://github.com/boyprince03/codingLearning.git
+git branch -M main
+git push -u origin main
+```
