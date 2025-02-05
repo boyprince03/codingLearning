@@ -49,6 +49,7 @@ import { Year,chagneMessage,currentTime } from './module/allDates.js';
 Year('Year');
 chagneMessage('changeText');
 currentTime('currentTime');
+countDown("countDown","2025-12-31 23:59:59");
 import { NumerOutputFor,NumerOutputWhile } from './module/loop.js';
 NumerOutputFor();
 NumerOutputWhile();

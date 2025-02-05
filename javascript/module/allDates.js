@@ -81,5 +81,32 @@ export function currentTime(ID){
     updateClock(); //呼叫函式 
     setInterval(updateClock,1000); //每秒刷新
 }
+// 倒數計時器
+export function countDown(ID, endTimeString) {
+    let countDownElement = document.getElementById(ID);
+    let endTime = new Date(endTimeString).getTime();
+
+    function updateClock() {
+        let now = new Date().getTime();
+        let time = endTime - now;
+
+        if (time <= 0) {
+            countDownElement.textContent = "倒數結束";
+            clearInterval(timer);
+            return;
+        }
+
+        let days = Math.floor(time / (1000 * 60 * 60 * 24));
+        let hours = String(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+        let minutes = String(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        let seconds = String(Math.floor((time % (1000 * 60)) / 1000)).padStart(2, '0');
+
+        countDownElement.textContent = `${days}天 ${hours}時 ${minutes}分 ${seconds}秒`;
+    }
+
+    updateClock();  // 立即執行一次，避免等 1 秒才更新
+    let timer = setInterval(updateClock, 1000);
+}
+
 
 
