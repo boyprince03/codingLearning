@@ -1,44 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>倒计时定时器</title>
     <style>
-        #timer {
-    position: relative;
-    width: 380px;
-    height: 380px;
-}
-
-#countDown {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
-    font-weight: bold;
-}
-
-circle {
-    transition: stroke-dashoffset 1s linear;
-}
-
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      }
+      #timer {
+        top: 50px;
+        position: relative;
+        width: 400px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        justify-content:center;
+        align-items: center;
+        border-radius: 50% 50%;
+        z-index: 1;
+        box-shadow: inset 0 0 10px black
+        
+      }
+      #svgcycle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50% 50%;
+        z-index: -1;
+        
+      }
+      #countDown {
+        font-size: 56px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+        margin-bottom: 0;
+      }
+      #time{
+        text-align: center; 
+      }
+      circle {
+        transition: stroke-dashoffset 1s linear;
+      }
+      button{
+            width: 40px;
+            height: 25px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            font-size: 10px;
+            padding: 5px;
+            text-align: center;
+            margin: 5px;
+            border: none;
+            transition: ease 0.5s;
+        }
+        button:hover{
+            background-color: white;
+            color: black;
+            box-shadow: inset 0 0 10px black, 0 0 10px black;
+        }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="timer">
-        <svg width="400" height="400" viewBox="0 0 120 120">
-            <!-- 背景圓 -->
-            <circle cx="60" cy="60" r="50" stroke="#ddd" stroke-width="10" fill="none" />
-            <!-- 進度圓 -->
-            <circle id="progressCircle" cx="60" cy="60" r="50" 
-                    stroke="blue" stroke-width="10" fill="none" 
-                    stroke-dasharray="314" stroke-dashoffset="0"
-                    transform="rotate(-90, 60, 60)"/>
-        </svg>
-        <p id="countDown">00:00:00</p>
+      <svg
+        width="400"
+        height="400"
+        viewBox="0 0  120 120"
+        id="svgcycle"
+      >
+        <!-- 背景圆 -->
+        <circle
+        cx="60"
+        cy="60"
+          r="50"
+          stroke="#ddd"
+          stroke-width="5"
+          fill="none"
+          style="background-color: #0003;"
+        />
+        <!-- 进度圆 -->
+        <circle
+          id="progressCircle"
+          cx="60"
+          cy="60"
+          r="50"
+          stroke="black"
+          stroke-width="5"
+          fill="none"
+          stroke-dasharray="314"
+          stroke-dashoffset="0"
+          transform="rotate(-90, 60, 60)"
+          
+        />
+      </svg>
+      <p id="countDown">00:00:00</p>
+      <p>
+        <input type="number" id="time" placeholder="Enter Time..." min="1" />
+        <select id="timeType">
+          <option value="seconds">Seconds</option>
+          <option value="minutes">Minutes</option>
+          <option value="hours">Hours</option>
+        </select><br>
+        <span id="errorMsg" style="color: red; display: none; "
+          >Please Enter numbers!</span
+        >
+      </p>
+      <div class="buttons">
+        <button type="button" value="Start">Start</button>
+        <button type="button" value="pause" class="buttonPause">Pause</button>
+        <button type="button" value="reset" class="buttonReset">Reset</button>
+      </div>
     </div>
-    
-</body>
+    <script>
+      let timer;
+      let remainingTime = 0;
+      let totalTime = 0;
+      let isPaused = false;
+
+      // 绑定按钮事件
+      document
+        .querySelector('button[value="Start"]')
+        .addEventListener("click", startCountdown);
+      document
+        .querySelector(".buttonPause")
+        .addEventListener("click", pauseCountdown);
+      document
+        .querySelector(".buttonReset")
+        .addEventListener("click", resetCountdown);
+
+      function startCountdown() {
+        const timeValue = parseInt(document.getElementById("time").value, 10);
+        const timeType = document.getElementById("timeType").value;
+
+        if (isNaN(timeValue) || timeValue <= 0) {
+          document.getElementById("errorMsg").style.display = "inline";
+          return;
+        } else {
+          document.getElementById("errorMsg").style.display = "none";
+        }
+
+        // 转换时间单位为秒
+        let totalSeconds;
+        switch (timeType) {
+          case "minutes":
+            totalSeconds = timeValue * 60;
+            break;
+          case "hours":
+            totalSeconds = timeValue * 3600;
+            break;
+          default:
+            totalSeconds = timeValue;
+        }
+
+        remainingTime = totalSeconds;
+        totalTime = totalSeconds;
+        isPaused = false;
+        clearInterval(timer);
+        updateClock();
+
+        timer = setInterval(() => {
+          if (!isPaused && remainingTime > 0) {
+            remainingTime--;
+            updateClock();
+          } else if (remainingTime <= 0) {
+            clearInterval(timer);
+          }
+        }, 1000);
+      }
+
+      function pauseCountdown() {
+        isPaused = !isPaused;
+      }
+
+      function resetCountdown() {
+        clearInterval(timer);
+        remainingTime = 0;
+        totalTime = 0;
+        isPaused = false;
+        document.getElementById("countDown").textContent = "00:00:00";
+        document.getElementById("time").value = "";
+        updateProgress(1); // 重置进度条
+      }
+
+      function updateClock() {
+        const hours = String(Math.floor(remainingTime / 3600)).padStart(2, "0");
+        const minutes = String(
+          Math.floor((remainingTime % 3600) / 60)
+        ).padStart(2, "0");
+        const seconds = String(remainingTime % 60).padStart(2, "0");
+        document.getElementById(
+          "countDown"
+        ).textContent = `${hours}:${minutes}:${seconds}`;
+
+        // 添加防止除以零的保护
+        const progress = totalTime > 0 ? remainingTime / totalTime : 1;
+        updateProgress(progress);
+      }
+
+      function updateProgress(progress) {
+        const circle = document.getElementById("progressCircle");
+        const circumference = 314; // 2 * π * 50
+        const offset = circumference * (1 - progress);
+        circle.style.strokeDashoffset = offset;
+      }
+    </script>
+  </body>
 </html>
