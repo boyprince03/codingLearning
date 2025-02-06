@@ -101,3 +101,19 @@ document.getElementById("time").addEventListener("keypress", function(event) {
         startCountdown();
     }
 });
+document.querySelector(".buttonPause").addEventListener("click", function() {
+    let timerElement = document.getElementById("timer");
+
+    if (timerElement.classList.contains("flashing")) {
+        timerElement.classList.remove("flashing"); // 取消動畫
+    } else {
+        timerElement.classList.add("flashing"); // 啟動動畫
+    }
+});
+document.querySelector(".buttonReset").addEventListener("click", function() {
+    let timerElement = document.getElementById("timer");
+
+    if (timerElement.classList.contains("flashing")) {
+        timerElement.classList.remove("flashing"); // 取消動畫
+    }
+});

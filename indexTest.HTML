@@ -75,6 +75,19 @@
             ;
 
         }
+        @keyframes backgrountColorChange{
+            0%{
+                background-color: black;
+            }
+            50%{
+                background-color: white;
+            }
+            100%{
+                background-color: black;
+            }
+        }.flashing{
+            animation: backgrountColorChange 1s infinite alternate;
+        }
 
     </style>
 </head>
@@ -93,8 +106,8 @@
         </p>
         <div class="buttons">
             <button type="button" value="Start">Start</button>
-            <button type="button" value="pause">Pause</button>
-            <button type="button" value="reset">Reset</button>
+            <button type="button" value="pause" class="buttonPause">Pause</button>
+            <button type="button" value="reset" class="buttonReset">Reset</button>
         </div>
     </div>
     
