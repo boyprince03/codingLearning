@@ -53,15 +53,33 @@ export function startCountdown() {
 }
 // 暫停倒數
 export function pauseCountdown() {
-    isPaused = !isPaused; // 切換暫停與繼續
+    if (isPaused) {
+        // 重新啟動計時
+        timer = setInterval(() => {
+            if (!isPaused && remainingTime > 0) {
+                remainingTime--;
+                updateClock();
+            } else {
+                clearInterval(timer);
+                if (remainingTime <= 0) {
+                    document.getElementById("countDown").textContent = "Time's up!";
+                }
+            }
+        }, 1000);
+    } else {
+        // 暫停計時
+        clearInterval(timer);
+    }
+    isPaused = !isPaused; // 切換暫停狀態
 }
+
 // 重置倒數
 export function resetCountdown() {
     clearInterval(timer);
     remainingTime = 0;
     isPaused = false;
     // 重置倒數計時器
-    document.getElementById("countDown").textContent = "00:00";
+    document.getElementById("countDown").textContent = "00:00:00";
     // 清空輸入框
     document.getElementById("time").value = "";
     // 隱藏錯誤訊息
@@ -72,9 +90,10 @@ export function resetCountdown() {
 export function updateClock() {
     // 取得倒數計時器元素
     let displayElement = document.getElementById("countDown");
-    let minutes = String(Math.floor(remainingTime / 60)).padStart(2, '0');
+    let hours = String(Math.floor(remainingTime / 3600)).padStart(2, '0');
+    let minutes = String(Math.floor(remainingTime %3600 / 60)).padStart(2, '0');
     let seconds = String(remainingTime % 60).padStart(2, '0');
-    displayElement.textContent = `${minutes}:${seconds}`;
+    displayElement.textContent = `${hours}:${minutes}:${seconds}`;
 }
 // 監聽 `Enter` 鍵事件，輸入後直接開始倒數
 document.getElementById("time").addEventListener("keypress", function(event) {
