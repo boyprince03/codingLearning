@@ -6,7 +6,7 @@
     <title>STEVE's Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <!--只能一個link，不然會覆蓋，只會執行最後一行-->
-
+    
 </head>
 <body>
     <header>
@@ -28,25 +28,31 @@
             </nav>
         </section>
             <ul id="Carousel">
-            <div class="WelcomeForhead">
-                <p class="TitleForhead">STEVE'S PORTFOLIO</P>
+                <div class="WelcomeForhead">
+                    <p class="TitleForhead">STEVE'S PORTFOLIO</P>
                     <P class="breathing-text">Welcome To My Portfolio !</P>
                     <p id="currentTime"></p>
-            </div>
-            <div id="changeText"></div>
-            <li id="One" class="CarouselImg">
-                <img src="" alt="">
-                <p>廣告文字</p>
-            </li>
-            <li id="Two" class="CarouselImg">
-                <img src="" alt="">
-                <p>廣告文字</p>
-            </li>
-            <li id="Three" class="CarouselImg">
-                <img src="" alt="">
-                <p>廣告文字</p>
-            </li>
-            </ul>
+                </div>
+                <div id="changeText"></div>
+                <ul id="Carousel01">
+                    <li id="One" class="CarouselImg active" >
+                        <!-- img src 路徑 alt讀取錯誤的替帶文字 title圖片標題文字(滑鼠放在上面會顯示的文字，和google搜尋讀取有關)  -->
+                        <img src="/images/banner/001.jpg" alt="廣告圖片1" title="廣告">
+                    </li>
+                    <li id="Two" class="CarouselImg " >
+                        <img src="/images/banner/002.jpg " alt="廣告圖片2"  title="廣告">
+                        <p>廣告文字</p>
+                    </li>
+                    <li id="Three" class="CarouselImg">
+                        <img src="/images/banner/003.jpg " alt="廣告圖片3"  title="廣告">
+                        <p>廣告文字</p>
+                    </li>
+                    <div class="controls">
+                        <button id="prevBtn">Prev</button>
+                        <button id="nextBtn">Next</button>
+                    </div>
+                </ul>        
+            </ul>   
     </header>
 
     <main id="IndexMain">

@@ -69,7 +69,7 @@
 #Skills >#Cards{
     /* 寬度 */
     /* width: 60%; */
-    width: 850px;
+    width: 100%;
     /* 背景色-調整區塊 */
     /* background-color: aqua; */
     margin: 0 auto;
@@ -121,9 +121,9 @@
 }  
 #Works li{
     /* 高 */
-    height: 145px;
+    height: auto;
     /* 寬 */
-    width: 265px;
+    width: 100%;
     border:0.5px solid gray;
     display: flex;
     justify-content: center;

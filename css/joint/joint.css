@@ -8,3 +8,8 @@ body{
     /* 字型樣式 */
     font-style: normal;
   }
+img{
+  /* 指定寬度 */
+  width: 100%;
+  height: auto;
+}
