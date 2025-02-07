@@ -82,21 +82,25 @@ section>nav>ul{
 header > #Carousel{
     margin-top: 60px;
     width: 100%;
-    height: 1050px;
+    height: 540px;
     background-color:chocolate;
     background-image: url(/images/background_1920.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 80%;
+    /* 相對定位: 絕對定位的定位範圍 */
+    position: relative;
 }
 #Carousel01 {
     width: 100%;
     display: flex;
     box-sizing: border-box;
     overflow: hidden;
-    /* 相對定位: 絕對定位的定位範圍 */
-    position: relative;
+    position: absolute;
+    top: 30px;
+    z-index: 0;
+    
 }
 /* 隱藏圖片 */
 #Carousel01 .CarouselImg{
@@ -129,8 +133,6 @@ header > #Carousel{
 
 }
 
-
-
 #Carousel .WelcomeForhead .TitleForhead {
     font-size: 100px;
     text-align: center;
@@ -146,6 +148,13 @@ header > #Carousel{
 }
 .WelcomeForhead{
     padding-top: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    z-index: 1;
+
+
 }
 :root {
     --breathe-dark: #333;

@@ -142,15 +142,21 @@
 }
 .WorksItems .One{
     background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012248.png);
-    background-size: contain;
+    background-size: cover;
+    background-position: 80%;
+    background-repeat: no-repeat;
 }
 .WorksItems .Two{
     background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012048.png);
-    background-size: contain;
+    background-size: cover;
+    background-position: 80%;
+    background-repeat: no-repeat;
 }
 .WorksItems .Three{
     background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012802.png);
-    background-size: contain;
+    background-size: cover;
+    background-position: 80%;
+    background-repeat: no-repeat;
 }
 
 #Works a{
