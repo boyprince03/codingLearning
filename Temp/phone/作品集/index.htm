@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEVE's Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
     <!--只能一個link，不然會覆蓋，只會執行最後一行-->
     
 </head>
 <body>
-    <article id="Article">
     <header>
         <section id="NavContent">
             <!--有兩個同階物件-->
             <h1 id="Logo">
                 <a href="index.htm">STEVE'S Portfolio</a>
+                
             </h1>
-            <nav id="navBar">
-                <!-- <ul id="MenuContent">
+            <nav>
+                <ul id="MenuContent">
                     <li id="NavAbout"><a href="#Abouts">關於Steve</a></li>
+                    <!-- 錨點連結法:一頁式內部連結:目的地的id -->
                     <li><a href="#Skills">相關技能</a></li>
                     <li><a href="#Works">作品集</a></li>
                     <li><a href="#Contacts">聯絡表單</a></li>
-                </ul> -->
+                    <!-- 假連結= javascript:; -->
+                </ul>
             </nav>
         </section>
             <ul id="Carousel">
                 <div id="NullBannerBox">
-                    <img src="/images/banner/ad001.jpg" alt="">
+                    <img src="/作品集/images/ad001.jpg">
                     <p>廣告文字</p>
                 </div>
                 <div id="changeText"></div>
@@ -40,15 +41,15 @@
                 <ul id="Carousel01">
                     <li id="One" class="CarouselImg active" >
                         <!-- img src 路徑 alt讀取錯誤的替帶文字 title圖片標題文字(滑鼠放在上面會顯示的文字，和google搜尋讀取有關)  -->
-                        <img src="/images/banner/ad001.jpg" alt="廣告圖片1" title="廣告">
+                        <img src="/作品集/images/ad001.jpg" alt="廣告圖片1" title="廣告">
                         <p>廣告文字1</p>
                     </li>
                     <li id="Two" class="CarouselImg " >
-                        <img src="/images/banner/ad002.jpg " alt="廣告圖片2"  title="廣告">
+                        <img src="/作品集/images/ad002.jpg " alt="廣告圖片2"  title="廣告">
                         <p>廣告文字2</p>
                     </li>
                     <li id="Three" class="CarouselImg">
-                        <img src="/images/banner/ad003.jpg " alt="廣告圖片3"  title="廣告">
+                        <img src="/作品集/images/ad003.jpg " alt="廣告圖片3"  title="廣告">
                         <p>廣告文字3</p>
                     </li>
                     <div class="controls">
@@ -129,13 +130,9 @@
             </div>
     
             <ol class="WorksItems">
-                <li  v-if="BIGIMAGE" class="One">
-                    <a @click="showImage" href="javascript:;"><span>JSP project</span></a>
+                <li class="One">
+                    <a href="javascript:;"><span>JSP project</span></a>
                 </li>
-                    <div v-else id="bigImage">
-                        <span @click="showImage" class="close">CLOSE</span>
-                        <p>big image</p>
-                    </div>
                 <li class="Two">
                     <a href="javascript:;"><span>WebDesign</span></a>
                 </li>
@@ -224,11 +221,7 @@
         </section>
     </footer>
     <!-- 若使用module寫法，需加入type="module" 才能調用模塊 -->
-</article>
-    <!-- <script type="module" src="/javascript/javascript.js"></script> -->
-
-    <!-- <script src="/vue/vueTest.js"></script> -->
-    <script type="module" src="/vue/vue.js"></script>
+    <script type="module" src="/作品集/JavaScript/javascript.js"></script>
 </body>
 
-</html> 
+</html>

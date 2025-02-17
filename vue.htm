@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue function test</title>
+    <!-- vue基底連結 -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    
+</head>
+<body >
+    <div id="app">{{ message }}</div>
+    <!-- <script src="vue/vueTest.js"></script> -->
+    <!-- 自己寫的vue檔案 -->
+    <p :="ob">{{ME}}</p>
+    <button @click="toggleText">切換顯示</button>
+    <p v-if="IfText">這是一段顯示文字</p>
+    <p v-else>這文字是隱藏的</p>
+
+    <template v-if="ok">
+        <h1>Title</h1>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+    </template>
+    <h1 v-show>Hollow</h1>
+    <!-- 不同之處在於 v-show 會在 DOM 渲染中保留該元素；v-show 僅切換了該元素上名為 display 的 CSS 屬性。 -->
+    <script type="module" src="/vue/vue.js"></script>
+</body>
+
+</html>

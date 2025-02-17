@@ -44,10 +44,10 @@ year.textContent=currentYear;
 例如:export function Year(){...}，import {Year} from './module/currentYear.js';，Year();
 */
 
-import { Year,changeMessage,currentTime } from './module/allDates.js';
+import { Year,chagneMessage,currentTime } from './module/allDates.js';
 // 修改模塊時，建議先停止呼叫模塊，再重新呼叫模塊(ID)=('Year')
 Year('Year');
-changeMessage('changeText');
+chagneMessage('changeText');
 currentTime('currentTime');
 import { NumerOutputFor,NumerOutputWhile } from './module/loop.js';
 NumerOutputFor();

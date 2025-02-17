@@ -1,0 +1,11 @@
+/* 匯入reset.css */
+/* 總表，所有的樣式最後匯入點的總站 */
+/* 匯入順序要注意，盡量有跡可循 */
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+@import url('http://fonts.googleapis.com/earlyaccess/cwtexyen.css');
+@import url(joint/reset.css);
+@import url(joint/joint.css);
+@import url(web/header.css);
+@import url(web/indexMain.css);
+@import url(web/footer.css);
+

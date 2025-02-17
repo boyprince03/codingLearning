@@ -96,7 +96,7 @@
 /* 作品集 */
 #Works{
     /* 背景圖 */
-    background-image: url(/images/work_space_background1920.jpg);
+    background-image: url(/作品集/images/work_space_background1920.jpg);
     /* 大小 */
     background-size: cover;
     /* 不隨卷軸移動 */
@@ -114,39 +114,11 @@
     grid-template-columns: repeat(3, 1fr); /* 3列布局 */
     gap: 10px; /* 格子间距 */
     max-width: 825px; /* ol最大宽度 */
-    /* max-height: 700px; */
     margin: 0 auto; /* 居中 */
     box-sizing: border-box;
+    
+    
 }  
-
-.WorksItems #bigImage{
-    width: 825px;
-    height: 476px;
-    
-    position: absolute;
-    z-index: 15;
-    /* opacity: 1; */
-    
-}
-
-.WorksItems #bigImage .close{
-    position: absolute;
-    right: 0;
-    padding: 10px;
-    /* opacity: 0; */
-    background-color: brown;
-}
-.WorksItems #bigImage p{
-    width: 825px;
-    height: 476px;
-    background-color: aquamarine;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    /* background-image: url("/images/螢幕擷取畫面\ 2025-01-25\ 012048.png");
-    background-size: contain;
-    background-repeat: no-repeat; */
-}
-
-
 #Works li{
     /* 高 */
     height: auto;
@@ -156,54 +128,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* backdrop-filter: blur(3px); */
+    backdrop-filter: blur(3px);
     z-index: 0;
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
-
     
 }
 #Works .WorksItems :hover a {
-    /* transform: translateY(0px); */
-    /* backdrop-filter: blur(20px); */
-    background: rgba(0,0,0, 0.5);
-    color: white;
+    transform: translateY(0px);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.2);
 }
-
-
 .WorksItems .One{
-    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012248.png);
+    background-image: url(/作品集/images/螢幕擷取畫面\ 2025-01-25\ 012248.png);
     background-size: cover;
     background-position: 80%;
     background-repeat: no-repeat;
 }
 .WorksItems .Two{
-    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012048.png);
+    background-image: url(/作品集/images/螢幕擷取畫面\ 2025-01-25\ 012048.png);
     background-size: cover;
     background-position: 80%;
     background-repeat: no-repeat;
 }
 .WorksItems .Three{
-    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012802.png);
+    background-image: url(/作品集/images/螢幕擷取畫面\ 2025-01-25\ 012802.png);
     background-size: cover;
     background-position: 80%;
     background-repeat: no-repeat;
 }
 
 #Works a{
-    display: flex;
-    justify-content: center;
     align-items: center;
-    /* align-items: center; */
     text-align: center;
-    width: 350px;
-    height: 150px;
-    /* padding: 50px; */
+    padding: 50px;
     text-decoration: none;
-    color:transparent;
+    color:black;
     font-size: 30px;
-    /* transform: translateY(150px); */
+    transform: translateY(150px);
     transition: transform 0.3s ease-in-out
 }
 
