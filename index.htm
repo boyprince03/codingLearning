@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEVE's Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
     <!--只能一個link，不然會覆蓋，只會執行最後一行-->
     
 </head>
@@ -18,12 +17,11 @@
                 <a href="index.htm">STEVE'S Portfolio</a>
             </h1>
             <nav id="navBar">
-                <!-- <ul id="MenuContent">
-                    <li id="NavAbout"><a href="#Abouts">關於Steve</a></li>
-                    <li><a href="#Skills">相關技能</a></li>
-                    <li><a href="#Works">作品集</a></li>
-                    <li><a href="#Contacts">聯絡表單</a></li>
-                </ul> -->
+                <ul id="MenuContent">
+                    <li v-for="Item in menuItems" :key="Item.id">
+                        <a :href="Item.link" :id="Item.id">{{Item.text}}</a>
+                    </li>
+                </ul>
             </nav>
         </section>
             <ul id="Carousel">
@@ -38,22 +36,12 @@
                     <p id="currentTime"></p>
                 </div>
                 <ul id="Carousel01">
-                    <li id="One" class="CarouselImg active" >
-                        <!-- img src 路徑 alt讀取錯誤的替帶文字 title圖片標題文字(滑鼠放在上面會顯示的文字，和google搜尋讀取有關)  -->
-                        <img src="/images/banner/ad001.jpg" alt="廣告圖片1" title="廣告">
-                        <p>廣告文字1</p>
-                    </li>
-                    <li id="Two" class="CarouselImg " >
-                        <img src="/images/banner/ad002.jpg " alt="廣告圖片2"  title="廣告">
-                        <p>廣告文字2</p>
-                    </li>
-                    <li id="Three" class="CarouselImg">
-                        <img src="/images/banner/ad003.jpg " alt="廣告圖片3"  title="廣告">
-                        <p>廣告文字3</p>
+                    <li v-for="item in Carousel" :key="item.id" :id="item.id" :class="item.class" :style=" {backgroundImage: 'url('+carouselStyle.image + ')' }" >
+                        <p>{{carouselStyle.text}}</p>
                     </li>
                     <div class="controls">
-                        <button id="prevBtn">Prev</button>
-                        <button id="nextBtn">Next</button>
+                        <button @click="handlePrev" id="prevBtn">Prev</button>
+                        <button @click="handleNext"id="nextBtn">Next</button>
                     </div>
                 </ul>        
             </ul>   

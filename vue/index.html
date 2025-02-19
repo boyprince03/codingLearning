@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <nav id="navBar">
+            <ul id="MenuContent">
+                <li v-for="Item in menuItems" :key="Item.id">
+                    <a :href="Item.link" :id="Item.id">{{Item.text}}</a>
+                </li>
+            </ul>
+        </nav>
+    </article>
+    <script type="module" src="/vue/vue.js"></script>
+</body>
+</html>
