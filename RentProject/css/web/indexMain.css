@@ -11,17 +11,43 @@ main {
     margin: 50px 0 0 200px;
     /* border: 5px solid black; */
     width: 100%;
+    position: relative;
 }
 
 
 section {
     display: flex;
     flex-direction: column;
-    width: 100vh;
     padding: 20px;
     box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
 
 }
+#room-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: auto;
+    /* background-color: aquamarine; */
+}
+
+#room-gallery li{
+    width: 250px;
+    height: 150px;
+    border: 2px solid rgba(0, 0, 0, 0.7) ;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+#room-gallery img {
+    width: 100%;  /* 让图片填充 li 的宽度 */
+    height: 100%; /* 让图片填充 li 的高度 */
+    object-fit: cover; /* 确保图片填充整个区域，不变形 */
+    display: block; /* 避免图片底部的空白间隙 */
+}
+
 
 
 button {
@@ -47,4 +73,5 @@ form input, form textarea {
     margin: 10px 0;
     box-sizing: border-box;
 }
+
 

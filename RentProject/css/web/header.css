@@ -18,14 +18,20 @@ header .logo {
     box-sizing: border-box;
 }
 
-header .logo h1{
+header .logo a{
     padding: 5px;
     text-align: center;
+    text-decoration: none;
+    color: #fff;
 }
-header .logo :hover{
+
+header .logo a:hover{
     box-shadow: 3px 6px 6px 0px rgba(0, 0, 0, 0.75);
+    /* transition: ease 0.3s;
+    border-radius: 5px; */
+    background-color: #575757;
+    /* transform: translateY(10px); */
     transition: ease 0.3s;
-    border-radius: 5px;
 }
 
 
