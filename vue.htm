@@ -22,8 +22,25 @@
         <p>Paragraph 2</p>
     </template>
     <h1 v-show>Hollow</h1>
+
+    <div>
+        <button id="myButton">傳統函式</button>
+        <button id="MyButton">箭頭函式</button>
+        <div>
+            <button id="Sub">按我-1</button>
+            <span id="Number"></span>
+            <button id="Add">按我+1</button>
+        </div>
+        
+
+        <script src="javascript/module/this.js">
+           
+           // console.log(this)
+            // 全域環境
+        </script>
+    </div>
     <!-- 不同之處在於 v-show 會在 DOM 渲染中保留該元素；v-show 僅切換了該元素上名為 display 的 CSS 屬性。 -->
-    <script type="module" src="/vue/vue.js"></script>
+    <!-- <script type="module" src="/vue/vue.js"></script> -->
 </body>
 
 </html>
