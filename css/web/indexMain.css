@@ -108,6 +108,11 @@
     
 
 }
+.WorksItems li {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 .WorksItems {
     display: grid;
@@ -117,16 +122,23 @@
     /* max-height: 700px; */
     margin: 0 auto; /* 居中 */
     box-sizing: border-box;
+    position: relative;
 }  
 
 .WorksItems #bigImage{
     width: 825px;
     height: 476px;
-    
     position: absolute;
-    z-index: 15;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     /* opacity: 1; */
-    
+    /* background-color: aqua; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* border-radius: 5px;     */
+    box-shadow:1px 4px 6px rgba(0, 0, 0, 0.2) ;
 }
 
 .WorksItems #bigImage .close{
@@ -134,16 +146,50 @@
     right: 0;
     padding: 10px;
     /* opacity: 0; */
-    background-color: brown;
+    /* background-color: brown; */
+
+    /* border: 1px solid #000000; */
+    /* border-radius: 50px; */
 }
+.icon {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease-in-out;
+    /* border: 1px solid #000000; */
+    /* border-radius: 5px;   */
+    
+}
+.line{
+    width: 18px;
+    height: 2px;
+    padding-bottom:2px ;
+    background-color: black;
+    transition: transform 0.1s ease-in-out, opacity 0.3s ease-in-out;
+}
+.line1 { transform: translateY(-3px); }
+.line2 { transform: translateY( 3px); }
+
+.icon:hover .line1 {
+    transform: rotate(45deg) translateY(3px);
+    
+}
+.icon:hover .line2 {
+    transform: rotate(-45deg) translateY(-3px);
+    
+}
+
 .WorksItems #bigImage p{
-    width: 825px;
-    height: 476px;
-    background-color: aquamarine;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    /* background-image: url("/images/螢幕擷取畫面\ 2025-01-25\ 012048.png");
-    background-size: contain;
-    background-repeat: no-repeat; */
+    padding: 10px;
+    /* background-color: aqua; */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* box-shadow: 0 4px 8px rgba(205, 157, 204, 0.4); */
 }
 
 
@@ -152,13 +198,13 @@
     height: auto;
     /* 寬 */
     width: 100%;
-    border:0.5px solid gray;
+    /* border:0.5px solid gray; */
+    box-shadow:0px 4px 8px rgba(0, 0, 0, 0.4) ;
     display: flex;
     justify-content: center;
     align-items: center;
     /* backdrop-filter: blur(3px); */
     z-index: 0;
-    position: relative;
     box-sizing: border-box;
     overflow: hidden;
 
@@ -166,29 +212,9 @@
 }
 #Works .WorksItems :hover a {
     /* transform: translateY(0px); */
-    /* backdrop-filter: blur(20px); */
-    background: rgba(0,0,0, 0.5);
+    backdrop-filter: blur(2px);
+    background: rgba(0,0,0, 0.2);
     color: white;
-}
-
-
-.WorksItems .One{
-    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012248.png);
-    background-size: cover;
-    background-position: 80%;
-    background-repeat: no-repeat;
-}
-.WorksItems .Two{
-    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012048.png);
-    background-size: cover;
-    background-position: 80%;
-    background-repeat: no-repeat;
-}
-.WorksItems .Three{
-    background-image: url(/images/螢幕擷取畫面\ 2025-01-25\ 012802.png);
-    background-size: cover;
-    background-position: 80%;
-    background-repeat: no-repeat;
 }
 
 #Works a{

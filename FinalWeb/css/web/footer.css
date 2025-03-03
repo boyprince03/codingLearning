@@ -1,0 +1,23 @@
+footer {
+  background-color: white;
+
+  padding: 35px 0 20px 0;
+
+  background-image: url(/images/background_1920.jpg);
+
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+  background-position: center 90%;
+}
+#FootText > h5 {
+  text-align: center;
+
+  color: rosybrown;
+}
+#FootText > h5 > p {
+  margin-bottom: 5px;
+
+  text-transform: uppercase;
+}

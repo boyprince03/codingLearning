@@ -1,0 +1,102 @@
+<template>
+    <div>
+      <ol class="WorksItems">
+        <li v-for="(item, index) in worksItems" :key="index" :class="item.class" 
+            :style="{ backgroundImage: `url(${item.image})` }">
+          <a @click="showImage(index)" href="javascript:;">{{ item.text }}</a>
+        </li>
+      </ol>
+  
+      <!-- 只有當 selectedIndex 不為 null 時顯示大圖 -->
+      <div v-if="selectedIndex !== null" id="bigImage" 
+           :style="{ backgroundImage: `url(${worksItems[selectedIndex].image})` }">
+        <button @click="closeImage" class="close icon">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+        </button>
+        <p>{{ worksItems[selectedIndex].text }}</p>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        worksItems: [
+          { class: 'one', text: 'JSP project', image: '/images/frontend.png' },
+          { class: 'two', text: 'WebDesign project', image: '/images/javaweb.png' },
+          { class: 'three', text: 'Java Project', image: '/images/sql.png' },
+          { class: 'four', text: '作品名稱', image: '/images/frontend.png' },
+          { class: 'five', text: '作品名稱', image: '/images/frontend.png' },
+          { class: 'six', text: '作品名稱', image: '/images/frontend.png' }
+        ],
+        selectedIndex: null
+      };
+    },
+    methods: {
+      showImage(index) {
+        this.selectedIndex = index;
+      },
+      closeImage() {
+        this.selectedIndex = null;
+      }
+    }
+  };
+  </script>
+  
+  <style scoped>
+  /* 作品列表 */
+  .WorksItems {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .WorksItems li {
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .WorksItems li:hover {
+    transform: scale(1.05);
+  }
+  
+  /* 大圖預覽 */
+  #bigImage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* 關閉按鈕 */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    back
+  

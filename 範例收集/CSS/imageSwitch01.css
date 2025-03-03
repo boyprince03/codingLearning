@@ -3,8 +3,8 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: end;
-  align-items: end;
+  /* justify-content: end;
+  align-items: end; */
   background: url(/範例收集/images/trees.jpg) no-repeat center/cover;
   transition: 0.8s ease-in-out;
 }
@@ -57,7 +57,7 @@ header{
     text-align: center;
     padding: 15px;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 8px rgba(37, 102, 233, 0.3);
 }
 
@@ -127,12 +127,28 @@ header{
         transform: translateY(0px);
     }
 }
-
-main{
-    height: 1200px;
-
-}
 footer{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    /* background-color: aqua; */
     position: fixed;
     bottom: 0px;
+}
+main{
+    width: 100%;
+    margin-top: 110px;
+
+}
+section{
+    margin-top: 10px;
+    height: 600px;
+    /* background-color: aqua; */
+    width: 100%;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 8px rgba(37, 102, 233, 0.3);
+
 }

@@ -12,7 +12,7 @@ import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 const app = createApp({
     data() {
       return {
-        BIGIMAGE: true,
+        // BIGIMAGE: false,
         // NavBar
             menuItems:[
             {id: 'NavAbout', text:'關於Steve', link: '#Abouts'},
@@ -28,20 +28,37 @@ const app = createApp({
             ],
             currentIndex:0,
             timer:null,
-            restartTimeout: null // 重啟自動輪播的定時器
+            restartTimeout: null, // 重啟自動輪播的定時器
+            worksItems: [
+              {class: 'one', text: 'JSP project',image:'/images/frontend.png'},
+              {class: 'two', text: 'WebDesign project',image:'/images/javaweb.png'},
+              {class: 'three', text: 'Java Project',image:'/images/sql.png'},
+              {class: 'four', text: '正在學習',image:'/javascript:;'},
+              {class: 'five', text: '正在學習',image:'/javascript:;'},
+              {class: 'six', text: '正在學習',image:'/javascript:;'},
+              {class: 'seven', text: '正在學習',image:'/javascript:;'},
+              {class: 'eight', text: '正在學習',image:'/javascript:;'},
+              {class: 'nine', text: '正在學習',image:'/javascript:;'}
+            ],
+            selectedIndex: null // 用來記錄點擊的索引
         }
     },
+
     computed:{
         // 動態生成綁定在style 屬性上的物件
-        carouselStyle(){
-            return this.Carousel[this.currentIndex];    
-        }
+        // worksItemsStyle(){
+        //     return this.worksItems[this.currentIndex];    
+        // }
     },
     methods: {
         // 顯示圖片/關閉圖片
-        showImage(){
-          this.BIGIMAGE = !this.BIGIMAGE;
+        showImage(index){
+          this.selectedIndex = index;
         },
+        closeImage(){
+          this.selectedIndex = null;
+        },
+
         // 自動或手動呼叫時均可使用的下一張圖片方法
         nextSlide() {
           this.currentIndex = (this.currentIndex + 1) % this.Carousel.length;
@@ -53,13 +70,25 @@ const app = createApp({
         },
         // 自動輪播：僅啟動計時器，不做額外操作
         startCarousel(){
-          this.timer = setInterval(this.nextSlide, 3000);
+          if(!this.timer){
+            this.timer = setInterval(this.nextSlide, 3000);
+          }
         },
+    
         // 停止自動輪播
         stopCarousel(){
-          clearInterval(this.timer);
-          this.timer = null;
+          if(this.timer){
+            clearInterval(this.timer);
+            this.timer = null;
+          }
         },
+                // 延遲重啟自動輪播
+    restartCarousel() {
+      setTimeout(() => {
+        this.startCarousel();
+      }, 3000);  // 3秒後重啟
+    },
+  
         // 手動點擊時使用的「下一張」控制
         handleNext() {
           // 手動操作時，先停止自動輪播，再切換圖片，最後重啟輪播
@@ -85,6 +114,8 @@ const app = createApp({
 
 
   });
+
+  
   app.mount('#Article');
 
 

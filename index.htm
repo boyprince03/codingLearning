@@ -27,7 +27,6 @@
             <ul id="Carousel">
                 <div id="NullBannerBox">
                     <img src="/images/banner/ad001.jpg" alt="">
-                    <p>廣告文字</p>
                 </div>
                 <div id="changeText"></div>
                 <div class="WelcomeForhead">
@@ -36,8 +35,12 @@
                     <p id="currentTime"></p>
                 </div>
                 <ul id="Carousel01">
-                    <li v-for="item in Carousel" :key="item.id" :id="item.id" :class="item.class" :style=" {backgroundImage: 'url('+carouselStyle.image + ')' }" >
-                        <p>{{carouselStyle.text}}</p>
+                    <li v-for="(item,index) in Carousel" 
+                    :key="item.id" 
+                    :id="item.id" 
+                    :class="[item.class,{active:index === currentIndex}]" >
+                        <img :src="item.image" alt="carousel image">
+                        <p>{{item.text}}</p>
                     </li>
                     <div class="controls">
                         <button @click="handlePrev" id="prevBtn">Prev</button>
@@ -116,7 +119,7 @@
                 <p class="LineWhite LineAll"></p>
             </div>
     
-            <ol class="WorksItems">
+            <!-- <ol class="WorksItems">
                 <li  v-if="BIGIMAGE" class="One">
                     <a @click="showImage" href="javascript:;"><span>JSP project</span></a>
                 </li>
@@ -148,7 +151,27 @@
                 <li class="Nine MrBo">
                     <a href="javascript:;"><span>作品名稱</span></a>
                 </li>
+            </ol> -->
+            <ol class="WorksItems">
+                <li v-for="(item, index) in worksItems"
+                :key="index"
+                :class="item.class"
+                :style=" {backgroundImage: `url(${item.image})` }"
+                >
+                <a @click="showImage(index)" href="javascript:;" >{{item.text}}</a>
+                <div v-if="selectedIndex !== null" 
+                    id="bigImage" 
+                    :style=" {backgroundImage: `url(${worksItems[selectedIndex].image})` }" >
+                    <!-- <span @click="closeImage" class="close">CLOSE</span> -->
+                    <button @click="closeImage" class="close icon" id="toggle">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                    </button>
+                    <p>{{ worksItems[selectedIndex].text }}</p>
+                </div>
+                </li>
             </ol>
+
         </section>
 
         <section id="Contacts" class="BackColor">
@@ -177,13 +200,13 @@
                 <div>
                     <p>＊詢問主旨</p>
                     <label for="GraphicDesign">
-                        <input type="radio" name="Question" id="GraphicDesign">平面設計
+                        <input type="radio" name="Question" id="GraphicDesign">Java網頁設計
                     </label>
                     <label for="WebDesign">
-                        <input type="radio" name="Question" id="WebDesign">網頁設計
+                        <input type="radio" name="Question" id="WebDesign">一般網頁設計
                     </label>
                     <label for="StudioDesign">
-                        <input type="radio" name="Question" id="StudioDesign">影音設計
+                        <input type="radio" name="Question" id="StudioDesign">資料庫維護
                     </label>
                     
                 </div>
